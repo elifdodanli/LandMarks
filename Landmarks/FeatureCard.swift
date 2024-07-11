@@ -7,16 +7,20 @@
 
 import SwiftUI
 
+
 struct FeatureCard: View {
     var landmark: Landmark
+
+
     var body: some View {
         landmark.featureImage?
             .resizable()
-            .overlay{
+            .overlay {
                 TextOverlay(landmark: landmark)
             }
     }
 }
+
 struct TextOverlay: View {
     var landmark: Landmark
 
@@ -47,5 +51,5 @@ struct TextOverlay: View {
 
 #Preview {
     FeatureCard(landmark: ModelData().features[0])
-        .aspectRatio(3/2, contentMode: .fit)
+        .aspectRatio(3 / 2, contentMode: .fit)
 }
